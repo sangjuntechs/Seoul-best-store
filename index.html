@@ -6,15 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    <p id='data'>data</p>
+    <h1 id='store_name'>
+    </h1>
+    <h3 id='store_sub'></h3>
+    <p id='data'></p>
     <script>
         const key = '6b556e7949716b723130374d74785767';
-        const url = `http://openapi.seoul.go.kr:8088/${key}/json/ListPriceModelStoreService/1/5/`;
+        const url = `http://openapi.seoul.go.kr:8088/${key}/json/ListPriceModelStoreService/1/50/`;
         fetch(url)
         .then(res => res.json())
         .then(myJson => {
-            document.getElementById('data').innerText = JSON.stringify(myJson, null, 1)
-            console.log(myJson)
+            let array = [];
+            array = myJson.ListPriceModelStoreService.row;
+            console.log(array)
+            array.forEach(element => console.log(element))
         })
     </script>
 </body>
