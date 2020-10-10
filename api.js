@@ -1,6 +1,10 @@
 const key = "6b556e7949716b723130374d74785767";
 const url = `http://openapi.seoul.go.kr:8088/${key}/json/ListPriceModelStoreService/1/50/`;
 
+const modal = document.querySelector('.modal')
+const closeBtn = document.getElementById('modal_btn')
+const bg = document.querySelector('.background')
+
 fetch(url)
   .then((res) => res.json())
   .then((myJson) => {
@@ -29,3 +33,10 @@ function createTable(data) {
     }
 
 }
+
+const closeModal = () => {
+    modal.classList.add('hide')
+    bg.classList.add('hide')
+}
+
+closeBtn.addEventListener('click', closeModal)
