@@ -1,26 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1 id='store_name'>
-    </h1>
-    <h3 id='store_sub'></h3>
-    <p id='data'></p>
-    <script>
-        const key = '6b556e7949716b723130374d74785767';
-        const url = `http://openapi.seoul.go.kr:8088/${key}/json/ListPriceModelStoreService/1/50/`;
-        fetch(url)
-        .then(res => res.json())
-        .then(myJson => {
-            let array = [];
-            array = myJson.ListPriceModelStoreService.row;
-            console.log(array)
-            array.forEach(element => console.log(element))
-        })
-    </script>
-</body>
+  </head>
+  <body>
+    <div id='store_data'>
+      <h1 id="store_name"></h1>
+      <h3 id="store_sub"></h3>
+      <p id="data"></p>
+    </div>
+    
+    <script src="api.js"></script>
+  </body>
 </html>
