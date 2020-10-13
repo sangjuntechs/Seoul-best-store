@@ -5,6 +5,7 @@ const modal = document.querySelector('.modal')
 const closeBtn = document.getElementById('modal_btn')
 const bg = document.querySelector('.background')
 
+//서울시 공공데이터 json가져오기
 fetch(url)
   .then((res) => res.json())
   .then((myJson) => {
@@ -15,7 +16,7 @@ fetch(url)
     createTable(array);
   });
 
-
+//json파일 정보 테이블 생성 함수
 function createTable(data) {
     let table = document.getElementById('store_data');
 
@@ -34,6 +35,7 @@ function createTable(data) {
 
 }
 
+//모달창
 const closeModal = () => {
     modal.classList.add('hide')
     bg.classList.add('hide')
